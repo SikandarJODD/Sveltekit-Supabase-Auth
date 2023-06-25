@@ -1,3 +1,7 @@
+<script>
+	export let user = '';
+</script>
+
 <div class="hero min-h-screen bg-base-200 md:min-h-[90vh]">
 	<div class="hero-content text-center">
 		<div class="max-w-md md:max-w-5xl">
@@ -8,8 +12,11 @@
 				Simple and easy to use starter template for your next project.
 			</p>
 			<div class="flex justify-center gap-4">
-				<button class="btn text-primary btn-outline capitalize">Sign In</button>
-				<button class="btn btn-success btn-outline capitalize">Codes</button>
+				{#if user === ''}
+					<button class="btn text-primary btn-outline capitalize">Sign In</button>
+				{:else}
+					<button class="btn btn-success btn-outline capitalize">Codes</button>
+				{/if}
 			</div>
 		</div>
 	</div>

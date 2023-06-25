@@ -1,12 +1,14 @@
 <script>
 	import { onMount } from 'svelte';
 	import { themeChange } from 'theme-change';
+	import supabase from '$lib/db';
 
 	// NOTE: the element that is using one of the theme attributes must be in the DOM on mount
-	onMount(() => {
+
+	onMount(async () => {
 		themeChange(false);
-		// 👆 false parameter is required for svelte
 	});
+
 	let navs = [
 		{
 			name: 'Home',
@@ -18,6 +20,8 @@
 		}
 	];
 	let isCheck = true;
+	export let email = '';
+	$: console.log(email);
 </script>
 
 <div class="navbar bg-base-100">
@@ -58,7 +62,18 @@
 				<li><a href={item.link} class="capitalize mx-1">{item.name}</a></li>
 			{/each}
 			<li>
-				<button class="btn btn-sm capitalize btn-outline">Sign In</button>
+				{#if email !== ''}
+					<!-- content here -->
+					<form method="POST">
+						<button class="btn btn-sm capitalize btn-outline" formaction="/" type="submit">
+							Log Out</button
+						>
+					</form>
+				{:else}
+					<button class="btn btn-sm capitalize btn-outline">
+						<a href="/signIn"> Sign In </a>
+					</button>
+				{/if}
 			</li>
 		</ul>
 	</div>

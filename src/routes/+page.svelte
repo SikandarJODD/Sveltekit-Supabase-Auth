@@ -1,5 +1,7 @@
 <script>
 	import Hero from '$lib/components/Hero.svelte';
+	export let data;
+	$: console.log(data);
 </script>
 
-<Hero />
+<Hero user={data.email} />
