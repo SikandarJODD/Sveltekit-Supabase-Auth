@@ -18,7 +18,7 @@
 			link: '/codes'
 		}
 	];
-	let isCheck = false;
+	let isCheck = true;
 	export let email = '';
 	$: console.log(email);
 </script>
