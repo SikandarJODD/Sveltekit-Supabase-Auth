@@ -1,7 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
 	import { themeChange } from 'theme-change';
-	import supabase from '$lib/db';
 
 	// NOTE: the element that is using one of the theme attributes must be in the DOM on mount
 
@@ -19,7 +18,7 @@
 			link: '/codes'
 		}
 	];
-	let isCheck = true;
+	let isCheck = false;
 	export let email = '';
 	$: console.log(email);
 </script>
