@@ -10,7 +10,8 @@
 	onMount(async () => {
 		themeChange(false);
 	});
+	$: console.log(data);
 </script>
 
-<NavBar email={data.email} />
+<NavBar email={data.data} />
 <slot />

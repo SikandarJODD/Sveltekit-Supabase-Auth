@@ -2,8 +2,10 @@ import type { PageServerLoad, Actions } from './$types';
 import supabase from '$lib/db';
 
 export const load: PageServerLoad = async () => {
-	const data = await supabase.auth.user();
+	const data = await supabase.auth.session();
+	console.log(data);
+
 	return {
-		email: data?.email
+		data: data?.user?.email
 	};
 };

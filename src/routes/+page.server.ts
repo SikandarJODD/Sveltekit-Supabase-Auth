@@ -3,9 +3,11 @@ import supabase from '$lib/db';
 import { redirect } from '@sveltejs/kit';
 
 export const load: PageServerLoad = async () => {
-	const data = await supabase.auth.user();
+	const data = await supabase.auth.session();
+	console.log(data);
+
 	return {
-		email: data?.email
+		data: data?.user
 	};
 };
 export const actions: Actions = {

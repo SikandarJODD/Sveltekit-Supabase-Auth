@@ -20,7 +20,6 @@
 	];
 	let isCheck = true;
 	export let email = '';
-	$: console.log(email);
 </script>
 
 <div class="navbar bg-base-100">
