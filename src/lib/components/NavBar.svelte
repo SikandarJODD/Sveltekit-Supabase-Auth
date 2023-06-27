@@ -76,7 +76,10 @@
 			</li>
 		</ul>
 	</div>
-	<div class="navbar-end">
+	<div class="navbar-end items-center align-middle">
+		<p class="mb-2 mx-4 text-sky-400">
+			{email}
+		</p>
 		<button data-act-class="ACTIVECLASS" data-set-theme={isCheck ? 'light' : 'dark'}>
 			<input type="checkbox" class="toggle toggle-success" bind:checked={isCheck} />
 		</button>
